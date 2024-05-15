@@ -1,2 +1,2 @@
 # CourseProject
- Rougelike game CursedCaves
+ Roguelike game CursedCaves
