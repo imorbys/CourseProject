@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public float lastVerticalVector;
     Rigidbody2D rb;
-    private int health = 5;
+    [SerializeField] private static int health = 10;
     public Animator animTextLevel;
     public Text TextLevel;
     public Text TextScore;
@@ -36,10 +36,12 @@ public class PlayerMovement : MonoBehaviour
             timerCreated = true;
         }
         score = PlayerPrefs.GetInt("SavedScore", 0);
+        TextScore.text = "Очки: " + score;
         timer = FindObjectOfType<Timer>();
         TextLevel.text = "Уровень:" + LevelUp.level;
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        ChangeHPBar();
     }
     void Update()
     {
@@ -120,16 +122,22 @@ public class PlayerMovement : MonoBehaviour
     }
     public void ChangeHeath(int healthDamage)
     {
-        ChangeHPBar();
         health = health - healthDamage;
+        ChangeHPBar();
         anim.SetTrigger("TakeDamage");
     }
     private Transform targetObject;
     private GameObject foundObject;
     private void ChangeHPBar()
     {
-        targetObject = HPBar.Find(health.ToString());
-        foundObject = targetObject.gameObject;
-        foundObject.SetActive(false);
+        for (int i = health + 1; i <= 10; i++)
+        {
+            Transform targetObject = HPBar.Find(i.ToString());
+            if (targetObject != null)
+            {
+                GameObject foundObject = targetObject.gameObject;
+                foundObject.SetActive(false);
+            }
+        }
     }
 }

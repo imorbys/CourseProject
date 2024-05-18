@@ -153,7 +153,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.008966446, y: 0.06724787}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -164,7 +164,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.12, y: 0.56}
+  m_Size: {x: 1.308294, y: 0.8289914}
   m_EdgeRadius: 0
 --- !u!50 &4015844084475355479
 Rigidbody2D:
@@ -178,9 +178,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 9
-  m_LinearDrag: 1
-  m_AngularDrag: 1
+  m_Mass: 1
+  m_LinearDrag: 99
+  m_AngularDrag: 9
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -230,7 +230,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5973538749785618217, guid: b7ae5b78b44a0804eab80c27513e7086, type: 3}
   shotPoint: {fileID: 8915362190646167744}
   starttimeBtwShoots: 1
-  databut: {fileID: 0}
+  databut: {fileID: 11400000, guid: ea8159eecf08ead4ca5c586a2732a7f0, type: 2}
 --- !u!114 &6428000024777649949
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -26,9 +26,12 @@ public class RoomsAndEnemies : MonoBehaviour
     [Header("Traps")]
     public GameObject[] trap;
 
+    [Header("Boss")]
+    public GameObject Boss;
+
     [HideInInspector] public List<GameObject> enemies;
     private RoomVariants variants;
-    [SerializeField] private bool spawned;
+    private bool spawned;
     private PlayerMovement player;
     private void Awake()
     {
@@ -43,7 +46,10 @@ public class RoomsAndEnemies : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            ActivateTraps();
+            if (trap != null)
+            {
+                ActivateTraps();
+            }
         }
         if (enemySpawners != null)
         {
@@ -64,12 +70,22 @@ public class RoomsAndEnemies : MonoBehaviour
                 StartCoroutine(CheckEnemies());
             }
         }
+        else
+        {
+            if (Boss != null)
+            {
+                Boss.SetActive(true);
+            }
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            DeactivateTraps();
+            if (trap != null)
+            {
+                DeactivateTraps();
+            }
         }
     }
     private void DeactivateTraps()

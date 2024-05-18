@@ -25,6 +25,11 @@ public class Bullet : MonoBehaviour
                 hitinfo.collider.GetComponent<Enemy>().TakeDamage(damage);
                 DestroyBullet();
             }
+            if (hitinfo.collider.CompareTag("DemonBoss") && !enemyBullet)
+            {
+                hitinfo.collider.GetComponent<Boss>().TakeDamage(damage);
+                DestroyBullet();
+            }
             if (hitinfo.collider.CompareTag("Player") && enemyBullet)
             {
                 hitinfo.collider.GetComponent<PlayerMovement>().ChangeHeath(damage);

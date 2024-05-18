@@ -380,6 +380,7 @@ MonoBehaviour:
   enemyTypes: []
   enemySpawners: []
   trap: []
+  Boss: {fileID: 0}
   enemies: []
   spawned: 0
 --- !u!61 &15178406462508284
@@ -5995,7 +5996,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3727113269064628752, guid: 845c3edf051731844873e0329bd4ab09, type: 3}
       propertyPath: direction
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7783239965591755096, guid: 845c3edf051731844873e0329bd4ab09, type: 3}
       propertyPath: m_Name

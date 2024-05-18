@@ -11,7 +11,7 @@ public class RoomVariants : MonoBehaviour
 
     [HideInInspector] public List<GameObject> rooms;
 
-    public GameObject exit;
+    public GameObject Boss;
 
     private void Awake()
     {
@@ -23,14 +23,21 @@ public class RoomVariants : MonoBehaviour
         if (rooms.Count > 0)
         {
             GameObject lastRoom = rooms[rooms.Count - 1];
-            Vector3 exitPosition = new Vector3(lastRoom.transform.position.x, lastRoom.transform.position.y, 2f);
-            Instantiate(exit, exitPosition, Quaternion.identity);
+            GameObject BossObj = Instantiate(Boss, Vector3.zero, Quaternion.identity);
+            BossObj.transform.SetParent(lastRoom.transform, false);
+            BossObj.SetActive(false);
             RoomsAndEnemies roomsAndEnemies = lastRoom.GetComponent<RoomsAndEnemies>();
-            roomsAndEnemies.DestroyDoors();
+            roomsAndEnemies.Boss = BossObj;
             foreach (Transform spawner in roomsAndEnemies.enemySpawners)
             {
                 Destroy(spawner.gameObject);
             }
+            roomsAndEnemies.enemySpawners = null;
+            foreach (GameObject traps in roomsAndEnemies.trap)
+            {
+                Destroy(traps);
+            }
+            roomsAndEnemies.trap = null;
         }
     }
 }
