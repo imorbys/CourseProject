@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     public int damage;
     public LayerMask whatIsSolid;
     public GameObject bulletEffect;
-    [SerializeField] bool enemyBullet;
+    public bool enemyBullet;
     private void Start()
     {
         Invoke("DestroyBullet", lifetime);

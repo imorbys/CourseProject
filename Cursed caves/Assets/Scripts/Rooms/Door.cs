@@ -1,11 +1,10 @@
 using System.Collections;
 using UnityEngine;
-
 public class Door : MonoBehaviour
 {
     public GameObject block;
-    private bool triggered = false;
 
+    private bool triggered = false;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!triggered && other.CompareTag("Block"))

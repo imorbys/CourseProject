@@ -1,15 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossTrigger : MonoBehaviour
 {
-    private Animator anim;
-    private float timeBtwAttack;
     public float starttimeBtwAttack;
-    private float timeBtwAttack1;
     public float starttimeBtwAttack1;
     public GameObject Fire;
+
+    private float timeBtwAttack1;
+    private Animator anim;
+    private float timeBtwAttack;
     private Boss BossScript;
     private bool hasEnteredTrigger = false;
 
@@ -18,7 +17,6 @@ public class BossTrigger : MonoBehaviour
         anim = GetComponentInParent<Animator>();
         BossScript = GetComponentInParent<Boss>();
     }
-
     public void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -65,7 +63,7 @@ public class BossTrigger : MonoBehaviour
             }
         }
     }
-    void timer()
+    private void timer()
     {
         Boss.speed = 1.4f;
         hasEnteredTrigger = false;

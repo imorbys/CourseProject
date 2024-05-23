@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public EnemyType enemyType;
-
-    private float timeBtwAttack;
-    public float starttimeBtwAttack;
-    public int health;
-    public float speed;
-    private Animator anim;
-    private PlayerMovement player;
-    private RoomsAndEnemies roomsAndEnemies;
-    public int damage;
     public enum EnemyType
     {
         Shooter,
         Near
     }
+    public EnemyType enemyType;
+    public float starttimeBtwAttack;
+    public int health;
+    public int damage;
+    public float speed;
+
+    private float timeBtwAttack;
+    private Animator anim;
+    private PlayerMovement player;
+    private RoomsAndEnemies roomsAndEnemies;
     private void Start()
     {
         roomsAndEnemies = GetComponentInParent<RoomsAndEnemies>();

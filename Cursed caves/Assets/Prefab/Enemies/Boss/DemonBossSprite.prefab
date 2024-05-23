@@ -219,7 +219,7 @@ MonoBehaviour:
   health: 50
   maxhealth: 50
   damage: 2
-  fireballPrefab: {fileID: 4998768345713382023, guid: e67837664781d574b9cab7aefa842c12, type: 3}
+  fireballPrefab: {fileID: 3231227125052148897, guid: e67837664781d574b9cab7aefa842c12, type: 3}
   orbitTarget: {fileID: 6102795709821293059}
   orbitRadius: 2
   exit: {fileID: 2820809200574255729, guid: c58a5d26b2efade4b9ec67969e56928d, type: 3}

@@ -3,8 +3,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
-    private Animator anim;
-
     public float moveSpeed = 5;
     [HideInInspector]
     public Vector2 moveDir;
@@ -13,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public float lastVerticalVector;
     Rigidbody2D rb;
-    [SerializeField] private static int health = 10;
     public Animator animTextLevel;
     public Text TextLevel;
     public Text TextScore;
@@ -23,10 +20,16 @@ public class PlayerMovement : MonoBehaviour
     public GameObject timerPrefab;
     public GameObject Pause;
     public Timer timer;
+    public bool triggered = false;
+    public static bool isPaused = false;
+
+    [SerializeField] private static int health = 10;
     private static bool timerCreated = false;
     private GameObject timerPrefabObject;
-    public bool triggered = false;
+    private Animator anim;
     private string formattedTime;
+    private Transform targetObject;
+    private GameObject foundObject;
     void Start()
     {
         if (!timerCreated)
@@ -67,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
             SceneManager.LoadScene("Menu");
         }
     }
-    public static bool isPaused = false;
+    
     public void TogglePause()
     {
         isPaused = !isPaused;
@@ -126,8 +129,6 @@ public class PlayerMovement : MonoBehaviour
         ChangeHPBar();
         anim.SetTrigger("TakeDamage");
     }
-    private Transform targetObject;
-    private GameObject foundObject;
     private void ChangeHPBar()
     {
         for (int i = health + 1; i <= 10; i++)

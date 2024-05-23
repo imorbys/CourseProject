@@ -1,12 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 public class TrapSpikeDamage : MonoBehaviour
 {
     public PlayerMovement player;
-    private static bool hasTriggered = false;
 
+    private static bool hasTriggered = false;
     private void Start()
     {
         player = FindObjectOfType<PlayerMovement>();

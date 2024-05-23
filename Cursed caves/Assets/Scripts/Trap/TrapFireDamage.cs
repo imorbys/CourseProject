@@ -5,8 +5,8 @@ using UnityEngine;
 public class TrapFireDamage : MonoBehaviour
 {
     public PlayerMovement player;
-    private static bool hasTriggered = false;
 
+    private static bool hasTriggered = false;
     private void Start()
     {
         player = FindObjectOfType<PlayerMovement>();

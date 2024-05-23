@@ -440,8 +440,8 @@ MonoBehaviour:
   gunType: 0
   bulletPrefab: {fileID: 5973538749785618217, guid: 5ca47dc20788ae240a566d526c75bc2a, type: 3}
   shotPoint: {fileID: 1830573372}
-  starttimeBtwShoots: 0.2
   databut: {fileID: 11400000, guid: ea8159eecf08ead4ca5c586a2732a7f0, type: 2}
+  starttimeBtwShoots: 0.2
 --- !u!61 &90703660
 BoxCollider2D:
   m_ObjectHideFlags: 0

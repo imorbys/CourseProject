@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GenerationRoom : MonoBehaviour
 {
-    public Direction direction;
     public enum Direction
     {
         Top,
@@ -13,6 +12,8 @@ public class GenerationRoom : MonoBehaviour
         Right,
         None
     }
+    public Direction direction;
+
     private RoomVariants variants;
     private int rand;
     private bool spawned = false;

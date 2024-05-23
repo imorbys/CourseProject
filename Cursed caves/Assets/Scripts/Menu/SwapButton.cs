@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class SwapButton : MonoBehaviour
 {
     [Header("Move")]
@@ -11,18 +9,17 @@ public class SwapButton : MonoBehaviour
     public Text _MovebuttonTextLeft;
     public Text _MovebuttonTextRight;
 
-
     [Header("Shoot")]
     public Text _ShootbuttonTextUp;
     public Text _ShootbuttonTextDown;
     public Text _ShootbuttonTextLeft;
     public Text _ShootbuttonTextRight;
 
-
+    public KeyCode keyCode { get; set; }
     public ButtonData databut;
     public GameObject warningText;
+
     private int s = 1;
-    public KeyCode keyCode { get; set; }
     private IEnumerator coroutine;
     private string tmpKey;
 
@@ -119,7 +116,7 @@ public class SwapButton : MonoBehaviour
                         buttonText.text = tmpKey;
                         StopCoroutine(coroutine);
                     }
-                    else if (!IsKeyCodeUsed(n) && n != KeyCode.Escape) // Изменено условие здесь
+                    else if (!IsKeyCodeUsed(n) && n != KeyCode.Escape)
                     {
                         keyCode = n;
                         buttonText.text = n.ToString();

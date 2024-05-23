@@ -4,25 +4,27 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    public GunType gunType;
-    public GameObject bulletPrefab;
-    public Transform shotPoint;
-    private float timeBtwShoots;
-    public float starttimeBtwShoots;
-    private Vector3 shootDirection = Vector3.right;
-    private PlayerMovement player;
-    private PlayerAnimator playerAnimator;
-    public ButtonData databut;
-    private void Start()
-    {
-        player = FindObjectOfType<PlayerMovement>();
-        playerAnimator = FindObjectOfType<PlayerAnimator>(); // Получаем ссылку на экземпляр класса PlayerAnimator
-    }
     public enum GunType
     {
         Default,
         Enemy
     }
+    public GunType gunType;
+    public GameObject bulletPrefab;
+    public Transform shotPoint;
+    public ButtonData databut;
+    public float starttimeBtwShoots;
+
+    private Vector3 shootDirection = Vector3.right;
+    private float timeBtwShoots;
+    private PlayerMovement player;
+    private PlayerAnimator playerAnimator;
+    private void Start()
+    {
+        player = FindObjectOfType<PlayerMovement>();
+        playerAnimator = FindObjectOfType<PlayerAnimator>();
+    }
+    
     void Update()
     {
         if (timeBtwShoots <= 0)

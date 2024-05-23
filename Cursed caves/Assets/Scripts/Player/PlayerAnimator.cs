@@ -1,20 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 public class PlayerAnimator : MonoBehaviour
 {
-    Animator am;
-    PlayerMovement pm;
-    SpriteRenderer sr;
-
+    private Animator am;
+    private PlayerMovement pm;
+    private SpriteRenderer sr;
     void Start()
     {
         am = GetComponent<Animator>();
         pm = GetComponent<PlayerMovement>();
         sr = GetComponent<SpriteRenderer>();
     }
-
     void Update()
     {
         if (pm.moveDir.x != 0 || pm.moveDir.y != 0)
@@ -28,7 +23,6 @@ public class PlayerAnimator : MonoBehaviour
             am.SetBool("Move", false);
         }
     }
-
     public void SpriteDirectionChecker()
     {
         if (Input.GetKey(KeyCode.LeftArrow))

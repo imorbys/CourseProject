@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class Boss : MonoBehaviour
 {
     public GameObject healthBarCanv;
@@ -10,17 +9,17 @@ public class Boss : MonoBehaviour
     public float health;
     public float maxhealth = 50;
     public static float speed = 1.4f;
-    private Animator anim;
-    private PlayerMovement player;
     public int damage;
     public GameObject fireballPrefab;
     public Transform orbitTarget;
     public float orbitRadius = 3f;
     public GameObject exit;
     public static bool InTrigger = false;
+
+    private Animator anim;
+    private PlayerMovement player;
     private List<GameObject> fireballs = new List<GameObject>();
     [SerializeField]private RoomsAndEnemies room;
-
     private void Start()
     {
         anim = GetComponent<Animator>();
